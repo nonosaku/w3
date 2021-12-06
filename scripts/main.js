@@ -1,6 +1,9 @@
 // Image switcher code
 
 let myImage = document.querySelector('img');
+//documentは組み込みのオブジェクト
+//ブラウザが表示しているページ、DOM(Document Object Modelの略)とも呼ぶ。
+//querySelectorはページの一部(HTML要素)を呼ぶ関数。
 
 myImage.onclick = function() {
   let mySrc = myImage.getAttribute('src');
@@ -18,11 +21,14 @@ let myHeading = document.querySelector('h1');
 
 function setUserName() {
   let myName = prompt('Please enter your name.');
+  //promptは組み込みの関数。prompt windowを表示してユーザ入力させる。
+  
   if(!myName) {
     setUserName();
   } else {
     localStorage.setItem('name', myName);
-    myHeading.innerHTML = 'Mozilla is cool, ' + myName;
+    //入力データを特別な場所(変数ではないファイルなどに相当)に保存する。
+    myHeading.innerHTML = 'こんにちは, ' + myName;
   }
 }
 
